@@ -326,6 +326,3 @@ class Gfunc:
             plt.gca().set_aspect("equal", adjustable="box")
         plt.grid(True)
         plt.show()
-
-
-
