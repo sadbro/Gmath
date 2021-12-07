@@ -150,6 +150,7 @@ class Gfunc:
 
         return output
 
+    @staticmethod
     def show_multiple(*Gfunc_objects):
 
         for function in Gfunc_objects:

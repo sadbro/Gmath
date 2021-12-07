@@ -403,4 +403,3 @@ class Plane(Vector, Point, metaclass=BaseType):
         plt.show()
 
 
-
