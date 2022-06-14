@@ -1,8 +1,17 @@
 import numpy as np
-from math import *
 from shapely.geometry import LineString as LS
 import matplotlib.pyplot as plt
-from metrics import Metrics
+from metrics import *
+
+__all__ =   {
+                "pi":Metrics.pi,
+                "e":Metrics.e,
+                "sin":Metrics.sin,
+                "cos":Metrics.cos,
+                "log":Metrics.log,
+                "sqrt":Metrics.sqrt,
+                "fact":Metrics.fact
+            }
 
 class Gfunc:
 
@@ -121,7 +130,7 @@ class Gfunc:
 
         return x_coord, y_coord
 
-    def function(self, input_value, r=4):
+    def function(self, input_value, r=5):
 
         if type(input_value) == list:
             output= []
@@ -252,9 +261,12 @@ class Gfunc:
         for index, i in enumerate(self.domain):
             try:
                 dy= (self.range[index+1]-self.range[index])/self.width_x
-                dys.append(round(dy, 2))
+                dys.append(dy)
+                #print("[{}, {}]".format(i, self.range[index]))
             except:
-                dys.append(dys[-1])
+                pass
+
+        dys.append(dys[-1])
 
         if only_return:
             return dys
@@ -265,7 +277,7 @@ class Gfunc:
             plt.grid()
             plt.show()
 
-    def der_find(self, y=0, show_og=False, only_return=False):
+    def der_find(self, y=0, show_og=True, only_return=False):
 
         xy= self.domain, [y]*self.steps_x
         self_ls= LS(np.column_stack((self.domain, self.differentiate(True))))
@@ -320,9 +332,15 @@ class Gfunc:
     @staticmethod
     def parametric(xg1, yg2, aspect_eq=True):
 
+        if len(xg1.range) != len(yg2.range):
+            raise MetricError("Unequal dimensions for parametrization: {} ~ {}".format(len(xg1.range), len(yg2.range)))
         plt.plot(xg1.range, yg2.range)
         plt.title("y={}, x={}".format(yg2.expression, xg1.expression))
         if aspect_eq:
             plt.gca().set_aspect("equal", adjustable="box")
         plt.grid(True)
         plt.show()
+
+g1 = Gfunc("sin(x)", local_constants=__all__)
+
+g1.find(0)

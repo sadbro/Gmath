@@ -99,7 +99,7 @@ class Metrics:
         return (180/Metrics.pi())*radian
 
     @staticmethod
-    def sin(x, iter=80, points=2, unit="rad"):
+    def sin(x, iter=80, points=4, unit="rad"):
 
         if unit == "rad":
             x_converted= x
@@ -117,7 +117,7 @@ class Metrics:
         return round(result, points)
 
     @staticmethod
-    def cos(x, iter=80, points=2, unit="rad"):
+    def cos(x, iter=80, points=4, unit="rad"):
 
         if unit == "rad":
             x_converted= x
@@ -335,9 +335,9 @@ class Metrics:
 
         """
 
-        deno= (c1[0]*c2[1])-(c1[1]*c2[0])
-        nume1= (c1[2]*c2[1])-(c1[1]*c2[2])
-        nume2= (c1[0]*c2[2])-(c1[2]*c2[0])
+        deno  = (c1[0]*c2[1])-(c1[1]*c2[0])
+        nume1 = (c1[2]*c2[1])-(c1[1]*c2[2])
+        nume2 = (c1[0]*c2[2])-(c1[2]*c2[0])
 
         return -nume1/deno, -nume2/deno
 
@@ -422,4 +422,3 @@ class Metrics:
 
         """
         return array[index+1:] + [array[index]] + array[:index]
-
