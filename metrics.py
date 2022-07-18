@@ -137,6 +137,23 @@ class Metrics:
     @staticmethod
     def countLR(array: list, num):
 
+        """
+        returns a Tuple<int, int> which counts {num} from the front and the back of {array}
+
+        -------------------------------------------------------------------------
+        Parameters: entree array                 -> array
+                    the number to be counted     -> num
+
+        -------------------------------------------------------------------------
+        Examples:
+
+        array= [0, 0, 1, 2 , 0, 0, 3, 1, 0, 7, 0, 0, 0, 0, 0, 0, 2, 0]
+        countLR(array, 0) returns (2, 1)
+
+        -------------------------------------------------------------------------
+
+        """
+
         fromL= 0
         for i in array:
             if i == num:
@@ -362,6 +379,21 @@ class Metrics:
 
     @staticmethod
     def get_series_depth(series: list, depth=1):
+
+        """
+        returns the depth at which the {series} can be reduced. Used to get(try) the common formula for each term.
+        -------------------------------------------------------------------------
+        Parameters: Input series                 -> series
+        -------------------------------------------------------------------------
+        Examples:
+
+        series= [1, 2, 3]
+        get_series_depth(series) returns 1
+
+        series= [1, 4, 9]
+        get_series_depth(series) returns 2
+
+        """
 
         try:
             check1= (series[1]-series[0])==(series[2]-series[1])
