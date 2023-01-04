@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/__init__.py
+src/metrics.py
+src/objects.py
+src/Gmath.egg-info/PKG-INFO
+src/Gmath.egg-info/SOURCES.txt
+src/Gmath.egg-info/dependency_links.txt
+src/Gmath.egg-info/requires.txt
+src/Gmath.egg-info/top_level.txt
