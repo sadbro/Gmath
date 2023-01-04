@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Gmath"
+version = "0.0.1"
+authors = [
+  { name="Prabaha Das", email="dasprabaha23@icloud.com" },
+]
+description = "A simple Python Math Library. Not Much More than that"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "shapely"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/sadbro/Gmath"
+"Bug Tracker" = "https://github.com/sadbro/Gmath/issues"
